@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.apache.thrift"},{"l":"org.apache.thrift.annotation"},{"l":"org.apache.thrift.async"},{"l":"org.apache.thrift.meta_data"},{"l":"org.apache.thrift.protocol"},{"l":"org.apache.thrift.scheme"},{"l":"org.apache.thrift.server"},{"l":"org.apache.thrift.transport"}]
