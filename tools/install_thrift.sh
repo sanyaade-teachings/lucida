@@ -3,7 +3,11 @@ if [ -z $THREADS ]; then
   THREADS=`nproc`
 fi
 
-export THRIFT_VERSION=0.9.3
+#export THRIFT_VERSION=0.9.3
+#export THRIFT_VERSION=0.10.0
+#export THRIFT_VERSION=0.12.0
+export THRIFT_VERSION=0.13.0
+
 THREADS=1
 
 installCheck () {

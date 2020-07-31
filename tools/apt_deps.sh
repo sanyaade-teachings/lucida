@@ -1,19 +1,31 @@
 #!/bin/bash
 ## Installs all package manager dependencies
-## FROM ubuntu:14.04
+## FROM ubuntu:14.04 ##update below for ubuntu:18.04
+## install latest python-dev(not 2.7.0)
+## python-gobject-2 is removed in this script file
 
+sudo add-apt-repository universe
+sudo add-apt-repository main
 apt-get update
+
 ln -s -f bash /bin/sh
-ln -s /usr/bin/pip2 /usr/local/bin/pip
-apt-get install -y zlib1g-dev \
+ln -s /usr/bin/pip3 /usr/local/bin/pip
+
+apt-get install -y libblas3
+
+apt install -y vim
+
+apt install libc6
+
+apt install -y zlib1g-dev \
                    libatlas3-base \
-                   python2.7-dev \
-                   libblas3 \
-                   libblas-dev \
+                   python-dev \
+                   libatlas-base-dev \
                    liblapack3 \
                    liblapack-dev \
-                   libc6 \
-                   software-properties-common \
+                   libblas-dev                   
+                   
+apt install -y     software-properties-common \
                    gfortran \
                    make \
                    ant \
@@ -22,21 +34,22 @@ apt-get install -y zlib1g-dev \
                    wget \
                    automake \
                    git \
-                   curl \
-                   libboost-dev \
+                   curl 
+
+apt install -y     libboost-dev \
                    libboost-all-dev \
                    libevent-dev \
                    libdouble-conversion-dev \
                    libtool \
                    liblz4-dev \
                    liblzma-dev \
-                   binutils-dev \
-                   libjemalloc-dev \
+                   binutils-dev 
+
+apt install -y     libjemalloc-dev \
                    pkg-config \
                    libtesseract-dev \
                    libopenblas-dev \
                    libblas-dev \
-                   libatlas-dev \
                    libatlas-base-dev \
                    libiberty-dev \
                    liblapack-dev \
@@ -68,8 +81,6 @@ apt-get install -y zlib1g-dev \
                    scons \
                    python-gi \
                    python-gobject \
-                   python-gobject-2 \
-                   vim \
                    memcached \
                    libyaml-dev \
                    libffi-dev \

@@ -1,16 +1,16 @@
 ####
 # Builds the lucida base image
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 
 #### environment variables
 ENV LUCIDAROOT /usr/local/lucida/lucida
 ENV LD_LIBRARY_PATH /usr/local/lib
 
-ENV OPENCV_VERSION 2.4.9
-ENV THRIFT_VERSION 0.9.3
+ENV OPENCV_VERSION 4.4.0
+ENV THRIFT_VERSION 0.13.0
 ENV THREADS 4
 ENV PROTOBUF_VERSION 2.5.0
-ENV JAVA_VERSION 8
+ENV JAVA_VERSION 11.0.8
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8 
 
 #### common package installations
@@ -18,7 +18,7 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y zlib1g-dev
 RUN apt-get install -y libatlas3-base
-RUN apt-get install -y python2.7-dev
+RUN apt-get install -y python-dev
 RUN apt-get install -y libblas3
 RUN apt-get install -y libblas-dev
 RUN apt-get install -y liblapack3
@@ -100,5 +100,5 @@ RUN \
   rm -rf mongo-cxx-driver/ && \
   rm -rf fbthrift/ && \
   rm -rf libbson/ && \
-  rm -rf opencv-2.4.9/
+  rm -rf opencv-4.4.0/
   

@@ -4,7 +4,7 @@ if [ -z $THREADS ]; then
 fi
 
 installCheck () {
-  g++ check_opencv.cpp -o check_opencv
+#  g++ check_opencv.cpp -o check_opencv
   if [[ $? -ne 0 ]]; then
     return 1
   else
@@ -18,15 +18,15 @@ if installCheck "$0"; then
   exit 0
 fi
 
-if [ ! -d opencv-2.4 ]; then
-  git clone https://github.com/opencv/opencv.git opencv-2.4
+if [ ! -d opencv-4.4.0 ]; then
+  git clone https://github.com/opencv/opencv.git opencv-4.4.0
   if [ $? -ne 0 ]; then
     echo "Could not clone OpenCV!!! Please try again later..."
     exit 1
   fi
 fi
-cd "opencv-2.4" \
-  && git checkout "2.4" \
+cd "opencv-4.4.0" \
+  && git checkout "4.4.0" \
   && mkdir -p build \
   && cd build \
   && cmake ..  \
